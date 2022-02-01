@@ -36,7 +36,7 @@ def main():
     api = create_api()
     since_id = 1
     while True:
-        since_id = check_mentions(api, ["caraio"], since_id)
+        since_id = check_mentions(api, ["please, reply me!"], since_id)
         logger.info("Waiting...")
         time.sleep(60)
 
