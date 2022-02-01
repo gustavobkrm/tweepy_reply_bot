@@ -10,11 +10,13 @@ import os
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger()
 
+# randomize image in the folder
 def return_random_image():
     path = './'
     imgList = os.listdir(path)
     return imgList
 
+# check mentions, if mentioned then upload a random image then reply the mentioned tweet
 def check_mentions(api, keywords, since_id):
     logger.info("Retrieving mentions")
     new_since_id = since_id
@@ -32,6 +34,7 @@ def check_mentions(api, keywords, since_id):
 
     return new_since_id
 
+# main func
 def main():
     api = create_api()
     since_id = 1
